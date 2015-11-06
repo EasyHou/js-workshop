@@ -9,11 +9,6 @@ Welcome to the Javascript Workshop
 + Slides for this workshop can be found [here](https://docs.google.com/presentation/d/1rf9F-waNPT0V0ntWZXqtapn7_077GMi1nZ293uOpZXo/edit?usp=sharing)
 
 
-## CodeShare ##
-+ You can just look at the projecter while we are doing live coding
-+ Alternatively you can look at your own computer using codeshare: follow the link [here](http://codeshare.io/habjsworkshop)
-
-
 ## This Repo ##
 
 + Please use git to clone this repo or just click the [Download ZIP](https://github.com/TakLee96/js-workshop/archive/master.zip) button on the right:

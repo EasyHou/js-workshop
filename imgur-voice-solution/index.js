@@ -94,12 +94,12 @@ function searchImgur(phrase){
 	- Gets the image links from each image
 	- Create HTML <img> element and render them on the page
 */
-function successHandler(data){
+function successHandler(data) {
 	/* Clear the container every time, in case there are old images still there */
 	imageContainer.innerHTML = "";
 	for(var i=0; i<data.length; i++){
 
-		/* Make sure that each data has a type property (so we know it's an image) and that it's safe for work ;) */
+		/* Make sure that each data has a type property (so we know it's an image) and that it's safe for work */
 		if(data[i].type && !data[i].nsfw){
 
 			/* Create an HTML image element and add the image link as the source */
