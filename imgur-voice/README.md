@@ -108,6 +108,13 @@ Look at the comments to see what needs to be done to successHandler.
 
 Check it out! 
 
+If you used git & github - you can deploy it to github pages and get a URL to share with friends. 
+Aproximate instructions:
+
+1. Commit your changes `git commit -am 'Your message here'`
+2. Push to master `git push origin master`
+3. Push to the gh-pages branch `git push origin gh-pages:`
+
 
 
 
