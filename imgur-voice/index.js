@@ -65,20 +65,42 @@ function init() {
 	- Send the data to the success handler
 */
 function searchImgur(phrase){
+	var xhr = new XMLHttpRequest();
+
+	xhr.onreadystatechange = function () {
+	    if (xhr.readyState === 4 && xhr.status === 200) {
+	        //console.log(xhr.response.data);
+	    	if (xhr.response.data.length > 0) {
+				successHandler(xhr.response.data);
+			} else {
+				successText = "No results. Sorry. :(";
+			}
+	    }
+
+	}; 
+
+	xhr.open('GET', 'https://api.imgur.com/3/gallery/search?q='+phrase); 
+	xhr.setRequestHeader("Authorization", "Client-ID a672a0e950c3b87");
+	xhr.responseType = 'json';
+	xhr.send();
+
+	
+	
+}
 	// Create a new XMLTTHPRequest. 
 	// Implement the function to handle changes to the ready state
 	/* Generate the GET request to "https://api.imgur.com/3/gallery/search?q="+phrase with our query string, the phrase */
 	/* Add our client id in the header for authentication purposes setRequestHeader("Authorization", "Client-ID a672a0e950c3b87"); */
 	/* We are expecting the responseType to be a JSON object */
 	/* Send the request to imgur.com ! */
-} 
+ 
 
 /**
 	successHandler(data)
 	- Gets the image links from each image
 	- Create HTML <img> element and render them on the page
 */
-function successHandler(data){
+function successHandler(data) {
 	/* Clear the container every time, in case there are old images still there */
 	imageContainer.innerHTML = "";
 	// Loop throuh the elements of data. 
@@ -87,14 +109,16 @@ function successHandler(data){
 		if(data[i].type && !data[i].nsfw){
 
 			/* Create an HTML image element and add the image link as the source */
-			var image = new Image();
+			var image = new Image()
 			// Set it's class attribute to be "imgur-image col-md-3" - this is a CSS property. 
-			
+			image.setAttribute("class","imgur-image col-md-3");
+			image.setAttribute("style","padding: 5px");
 			// set the src of the image (image.src) to the data element's link attribute. 
+			image.src= data[i].link;
+			// append the image as a child to imageContainer 		
+			imageContainer.appendChild(image);
 
-			// append the image as a child to imageContainer 
-
-		}
+		}	
 	}
 }
 
@@ -104,13 +128,13 @@ function successHandler(data){
 */
 function toggleListen(){
 	if(isListening){
-		// Stop recognition, (see the global recognition variable)
-		// Set isListening to false 
-		// Make the button text be Start Listening
+		recognition.stop();
+		isListening = false;
+		listenButton.innerHTML = "Start Listening";
 	}else{
-		// Start recognition, (see the global recognition variable)
-		// Set isListening to true 
-		// Make the button text be Stop Listening
+		recognition.start();
+		isListening = true;
+		listenButton.innerHTML = "Stop Listening";
 	}
 }
 
