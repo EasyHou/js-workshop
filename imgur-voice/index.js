@@ -50,6 +50,7 @@ function init() {
 					statusText.innerHTML = "Searching "+"\""+phrase+"\""+" ...";
 
 				}
+				statusText.innerHTML = "Search complete!";
 			}else{
 				statusText.innerHTML = "Didn't quite catch that, try again!";
 			}
