@@ -1,26 +1,15 @@
-Welcome to the Javascript Workshop
-==================================
+# imgur-voice
+Javascript workshop for Cal Hacks and Hackers @ Berkeley
 
-![Banner](http://i.imgur.com/kOI9E1s.jpg)
+[imgur-voice](https://carpetfizz.github.io/imgur-voice/) takes advantage of `webkitSpeechRecognition` in Google Chrome to search [imgur.com](http://imgur.com/)
 
-## Slides ##
+## Obtaining an imgur Client ID
+In this workshop we will be accessing imgur's API (Application Programming Interface) to fetch images based on a search parameter. To do this, we must obtain a Client ID from imgur.com. Popular APIs do this to combat spam and ensure the authenticity of its consumers.
 
-+ HTML/CSS workshop slides can be found [here](https://docs.google.com/presentation/d/1eOFjNNqW1eT8KsMtVej-3Z_SAeNdvm39lXawj2jfqZM/edit#slide=id.gbb3433bc3_1_7)
-+ Slides for this workshop can be found [here](https://docs.google.com/presentation/d/1rf9F-waNPT0V0ntWZXqtapn7_077GMi1nZ293uOpZXo/edit?usp=sharing)
-
-
-## This Repo ##
-
-+ Please use git to clone this repo or just click the [Download ZIP](https://github.com/TakLee96/js-workshop/archive/master.zip) button on the right:
-	- `examples/` Javascript code examples
-	- `todo/` **todo** project starter code 
-	- `todo-solution/` **todo** project solution code
-	- `imgur-voice/` final project starter code
-	- `imgur-voice-solution/` final project solution code
-
-
-## References ##
-
-+ W3Schools: [w3schools.com](http://www.w3schools.com/jsref/)
-+ Mozilla Developer Network (MDN): [developer.mozilla.org](https://developer.mozilla.org/en-US/)
-+ *JavaScript: The Good Parts*: $17.69 on [Amazon](http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742)
+1. Create an account on [imgur.com](http://imgur.com/)
+2. Register your application by filling out this [form](https://api.imgur.com/oauth2/addclient). 
+   * Application Name: `YourNameImgurVoice`
+   * Authorization Type: `Anonymous usage without user authorization`
+   * Authorization Callback URL: `https://localhost:8000` (This one doesn't really matter. Enter any valid URL)
+3. Find your Client ID by going to [apps](https://imgur.com/account/settings/apps). Make sure you're logged in!
+4. Now we just need to put our unique Client ID into our code. Change the line that says `	imgurRequest.setRequestHeader("Authorization", "Client-ID your_client_id");` by replacing `your_client_id` with the one you just generated.
