@@ -15,8 +15,6 @@ The Javascript workshop for Cal Hacks and Hackers @ Berkeley - used for Practica
 
 + Please use git to clone this repo or just click the [Download ZIP](https://github.com/TakLee96/js-workshop/archive/master.zip) button on the right:
 	- `examples/` Javascript code examples
-	- `todo/` **todo** project starter code 
-	- `todo-solution/` **todo** project solution code
 	- `imgur-voice/` final project starter code
 	- `imgur-voice-solution/` final project solution code
 
