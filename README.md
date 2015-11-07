@@ -1,5 +1,7 @@
-Welcome to the Javascript Workshop
+console.log("Hello World") - Javascript
 ==================================
+
+The Javascript workshop for Cal Hacks and Hackers @ Berkeley - used for Practical Programming. Thanks Ajay for Guest Lecturing. 
 
 ![Banner](http://i.imgur.com/kOI9E1s.jpg)
 
